@@ -409,7 +409,7 @@ params = {'objective':"binary:logistic", "subsample":0.7, "eval_metric":"auc", "
 
 xgbM = xgb.train(params=params, dtrain=dtrain, num_boost_round=200, verbose_eval=10)
 
-pres = xgbM.predict(dtest)
+preds = xgbM.predict(dtest)
 # 查看效果
 PotRoc(Y=Ytest, preds=preds)
 recall_precision_f1(Y=Ytest, preds=preds, k=10)
